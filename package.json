@@ -1,0 +1,30 @@
+{
+  "name": "alertmanager-js",
+  "version": "0.15.0-rc.1",
+  "description": "Prometheus Alertmanger REST API bindings",
+  "main": "src/index.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "prestart": "tsc",
+    "pretest": "tsc",
+    "posttest": "tslint 'src/**/*.ts'",
+    "start": "node dist",
+    "test": "echo \"TODO: Tests\""
+  },
+  "keywords": [
+    "prometheus",
+    "alertmanager",
+    "api"
+  ],
+  "author": "Lukas Supienis <lukassup@yahoo.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.8.0",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
