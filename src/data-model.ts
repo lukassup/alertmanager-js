@@ -259,10 +259,51 @@ interface IReceiversResponse extends IResponse {
 }
 
 /**
+ * Alertmanager alert group route options
+ * {
+ *   "receiver": "slack",
+ *   "groupBy": [
+ *     "alertname",
+ *     "instance",
+ *     "service"
+ *   ],
+ *   "groupWait": 10000000000,
+ *   "groupInterval": 300000000000,
+ *   "repeatInterval": 14400000000000
+ * }
+ */
+interface IAlertGroupRouteOpts {
+  receiver: string;
+  groupBy: string[];
+  groupWait: Number;
+  groupInterval: Number;
+  repeatInterval: Number;
+}
+
+/**
+ * Alertmanager alert group block
+ * {
+ *   "routeOpts": { ... },
+ *   "alerts": [ ... ]
+ * }
+ */
+interface IAlertBlock {
+  routeOpts: IAlertGroupRouteOpts;
+  alerts: IAlert[];
+}
+
+/**
  * Alertmanager alert group
+ * {
+ *   "labels": { ... },
+ *   "groupKey": "{}:{alertname=\"high_memory_usage\", instance=\"web001\", service=\"web\"}",
+ *   "blocks": [ ... ]
+ * }
  */
 interface IAlertGroup {
-  // TODO
+  labels: { [label: string]: string };
+  groupKey: string;
+  blocks: IAlertBlock[];
 }
 
 /**
