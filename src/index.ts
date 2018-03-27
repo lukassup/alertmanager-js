@@ -1,6 +1,7 @@
 import { AlertmanagerClient } from './client';
 
-const client = new AlertmanagerClient('http://localhost:9093');
+const ALERTMANAGER_URL = process.env.ALERTMANAGER_URL || 'http://localhost:9093';
+const client = new AlertmanagerClient(ALERTMANAGER_URL);
 
 (async () => {
 
