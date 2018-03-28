@@ -1,4 +1,4 @@
-import { AlertmanagerClient } from './client';
+import { AlertmanagerClient } from '.';
 
 const ALERTMANAGER_URL = process.env.ALERTMANAGER_URL || 'http://localhost:9093';
 const client = new AlertmanagerClient(ALERTMANAGER_URL);

@@ -1,16 +1,18 @@
 {
   "name": "alertmanager-js",
-  "version": "0.15.0-rc.1",
+  "version": "0.15.0-rc.1-1",
   "description": "Prometheus Alertmanger REST API bindings",
-  "main": "src/index.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
+    "posttest": "tslint 'src/**/*.ts'",
+    "prepublish": "tsc",
     "prestart": "tsc",
     "pretest": "tsc",
-    "posttest": "tslint 'src/**/*.ts'",
-    "start": "node dist",
-    "test": "echo \"TODO: Tests\""
+    "start": "node ./lib/examples",
+    "test": "echo \"TODO: Tests\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
   },
   "keywords": [
     "prometheus",
