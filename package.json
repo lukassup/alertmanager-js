@@ -6,7 +6,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "posttest": "tslint 'src/**/*.ts'",
-    "prepublish": "tsc",
+    "prepare": "tsc",
     "prestart": "tsc",
     "pretest": "tsc",
     "start": "node ./lib/examples",
